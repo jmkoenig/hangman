@@ -11,11 +11,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument('filename')
 args = parser.parse_args()
 
+games_played = 0
 win_count = 0
 keep_playing = 'y'
 while keep_playing == 'y':
     game = Hangman()
     game.play(args.filename)
+    games_played += 1
     if game.win == True:
         win_count += 1
 
@@ -24,4 +26,5 @@ while keep_playing == 'y':
         keep_playing = input('Invalid. Enter \'y\' for yes and \'n\' for no: ')
 
 print('\nThanks for playing!')
+print(f'Games played: {games_played}')
 print(f'Games won: {win_count}')
