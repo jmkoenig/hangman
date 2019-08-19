@@ -14,6 +14,7 @@ args = parser.parse_args()
 games_played = 0
 win_count = 0
 keep_playing = 'y'
+
 while keep_playing == 'y':
     game = Hangman()
     game.play(args.filename)

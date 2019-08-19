@@ -5,6 +5,8 @@
 import os
 from random import randint
 
+# Creates a game of Hangman
+
 class Hangman:
     def __init__(self):
         self.gameboard = ['?', '?', '?', '?', '?']
@@ -58,9 +60,6 @@ class Hangman:
     def check_letter(self, guess):
         in_word = False
         index = -1
-        # make letter lowercase if not
-        if guess.islower() != True:
-            guess = guess.lower()
         if guess not in self.guess_list:
             # add guess to guess list
             self.guess_list.append(guess)
@@ -81,9 +80,6 @@ class Hangman:
     # check that guessed word is the same as game word
     def guess_word(self):
         guess = input('Guess word: ')
-        # make lowercase if not
-        if guess.islower() != True:
-            guess = guess.lower()
         # if they're not the same, make limb count 6 so it signals a loss
         if guess != self.game_word:
             self.limb_count = 6
@@ -104,6 +100,9 @@ class Hangman:
             self.print_man()
             self.print_board()
             guess = input('Guess a letter, or enter \'guess\' to guess the word: ')
+            # make lowercase if not
+            if guess.islower() != True:
+                guess = guess.lower()
             if guess == 'guess':
                 self.guess_word() 
                 break
