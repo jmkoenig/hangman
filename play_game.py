@@ -7,6 +7,8 @@
 from hangman import Hangman
 import argparse
 
+# Uses the Hangman class to create a running game of Hangman
+
 parser = argparse.ArgumentParser()
 parser.add_argument('filename')
 args = parser.parse_args()
