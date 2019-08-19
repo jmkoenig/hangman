@@ -22,8 +22,13 @@ while keep_playing == 'y':
         win_count += 1
 
     keep_playing = input('Keep playing? Enter \'y\' for yes and \'n\' for no: ')
+    # make lowercase if not
+    if keep_playing.islower() != True:
+        keep_playing = keep_playing.lower()
     while keep_playing != 'y' and keep_playing != 'n':
         keep_playing = input('Invalid. Enter \'y\' for yes and \'n\' for no: ')
+        if keep_playing.islower() != True:
+            keep_playing = keep_playing.lower()
 
 print('\nThanks for playing!')
 print(f'Games played: {games_played}')
